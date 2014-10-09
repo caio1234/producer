@@ -1,0 +1,26 @@
+<h2>Categories</h2>
+
+<% if @categories.present? %>
+<ul class="list">
+  <% @categories.each do |category| %>
+    <%= content_tag_for :li, category, :class => cycle(:odd, :even) do %>
+      <%= category.name %>
+
+      <div class="right">
+        <%= link_to_edit [:edit, :admin, category] %>,
+        <%= link_to_destroy [:admin, category] %>
+      </div>
+    <% end %>
+  <% end %>
+</ul>
+<% else %>
+  <p>You don't have any categories yet.</p>
+<% end %>
+
+<hr class="thick" />
+
+<div class="bar">
+  <div class="right">
+    <%= link_to 'New category', new_admin_category_path, :class => "button" %>
+  </div>
+</div>
