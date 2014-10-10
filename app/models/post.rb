@@ -4,9 +4,9 @@ class Post < ActiveRecord::Base
   
   belongs_to :author, :class_name => "User", :foreign_key => "author_id"
   
-  validates_presence_of :title, :body, :permalink#, :author
+  validates_presence_of :title, :body, :slug#, :author
   #validates_associated :author
-  validates_uniqueness_of :permalink
+  validates_uniqueness_of :slug
   validates_inclusion_of :draft, :in => [true, false]
   
   scope :published, lambda {
