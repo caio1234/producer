@@ -30,18 +30,21 @@ class Admin::PostsController < Admin::AdminController
   def create
     @post = Post.new(params.require(:post).permit!)
     
-
-    respond_to do |format|
+    @post = Post.new(params[:post])
+    flash[:notice] = 'Post was successfully created.' if @post.save
+    respond_with @post, :location => admin_posts_path
+    
+    #respond_to do |format|
 
      # flash[:notice] = 'Post was successfully created.'
-      if @post.save
-        format.html { redirect_to @post, :location => admin_posts_path, notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: admin_posts_path }
-      else
-        format.html { render :new }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
-    end
+     # if @post.save
+    #    format.html { redirect_to @post, :location => admin_posts_path, notice: 'Post was successfully created.' }
+    #    format.json { render :show, status: :created, location: admin_posts_path }
+    #  else
+    #    format.html { render :new }
+    #    format.json { render json: @post.errors, status: :unprocessable_entity }
+    #  end
+    #end
   end
 
   # PATCH/PUT /posts/1
@@ -50,17 +53,19 @@ class Admin::PostsController < Admin::AdminController
     params[:post][:category_ids] ||= []
         
     @post = Post.find(params[:id])
+    flash[:notice] = 'Post was successfully updated.' if @post.update_attributes(params.require(:post).permit!)
+    respond_with @post, :location => admin_posts_path
     
-    respond_to do |format|
+    #respond_to do |format|
 	  
-      if @post.update_attributes(params.require(:post).permit!)
-        format.html { redirect_to @post, :location => admin_posts_path, notice: 'Post was successfully updated.' }
-        format.json { render :show, status: :ok, location: admin_posts_path }
-      else
-        format.html { render :edit }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
-    end
+    #  if @post.update_attributes(params.require(:post).permit!)
+    #    format.html { redirect_to @post, :location => admin_posts_path, notice: 'Post was successfully updated.' }
+    #    format.json { render :show, status: :ok, location: admin_posts_path }
+    #  else
+    #    format.html { render :edit }
+    #    format.json { render json: @post.errors, status: :unprocessable_entity }
+    #  end
+   # end
   end
 
   # DELETE /posts/1

@@ -9,12 +9,24 @@ class Post < ActiveRecord::Base
   validates_uniqueness_of :slug
   validates_inclusion_of :draft, :in => [true, false]
   
+  before_validation :generate_slug
+  
   scope :published, lambda {
-    where("draft = ? AND published_at ?", false, Time.current)    
+    where("draft = ? AND published_at < ?", false, Time.current)
   }
   
   scope :search, lambda { |terms|
     where("title LIKE :t OR body LIKE :t", :t => "%#{terms}%")
   }
+  
+  def to_param
+    "#{id}-#{slug}"
+  end
+  
+  protected
+  def generate_slug
+    self.slug = title unless slug.present?
+    self.slug = slug.parameterize
+  end
 
 end

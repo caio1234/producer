@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_filter :load_categories
 
   def index
-    @posts = Post.scoped
+    @posts = Post.all
     @posts = @posts.search(params[:search]) if params[:search].present?
     @posts = @category.posts if @category.present?
     @posts = @posts.published
@@ -18,6 +18,6 @@ class PostsController < ApplicationController
 protected
   def load_categories
     @categories = Category.all
-   # @category = Category.find(params[:category_id]) if params[:category_id]
+    @category = Category.find(params[:category_id]) if params[:category_id]
   end
 end

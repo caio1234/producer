@@ -1,9 +1,9 @@
 <%= stylesheet_link_tag "blog" %>
 
 <div id="column1">
-  <%- if @posts.present? -%>
+  <% if @posts.present? %>
 
-    <%- @posts.each do |post| -%>
+    <% @posts.each do |post| %>
       <h2><%= link_to post.title.titleize, post %></h2>
 
       <div id="post">
@@ -11,11 +11,11 @@
 
         <p><%= link_to "continue ...", post %></p>
       </div>
-    <%- end -%>
+    <% end %>
 
-  <%- else -%>
+  <% else %>
     <p>We'll start posting soon.</p>
-  <%- end -%>
+  <% end %>
 </div>
 
 <div id="column2">

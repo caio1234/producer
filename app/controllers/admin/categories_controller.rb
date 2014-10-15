@@ -32,8 +32,8 @@ class Admin::CategoriesController < Admin::AdminController
   def create
     @category = Category.new(params.require(:category).permit!)
 
-    #flash[:notice] = 'Category was successfully created.' if @category.save
-    #respond_with @category, :location => admin_categories_path
+    flash[:notice] = 'Category was successfully created.' if @category.save
+    respond_with @category, :location => admin_categories_path
 
     #respond_to do |format|
     #  if @category.save
