@@ -1,11 +1,16 @@
 module Admin::AdminHelper
+
+	def link_to_new(model, url, html_options = {})
+		link_to t("new", :model => model.model_name.human), url, html_options
+	end
+
 	def link_to_edit(url, html_options = {})
 		html_options.reverse_merge!(:class => "green")
-		link_to "edit", url, html_options
+		link_to t("edit"), url, html_options
 	end
 
 	def link_to_destroy(url, html_options = {})
-		html_options.reverse_merge!(:confirm => 'Are you sure?', :method => :delete, :class => "red")
+		html_options.reverse_merge!(:confirm => ("confirm"), :method => :delete, :class => "red")
 		link_to "destroy", url, html_options
 	end
 
@@ -16,4 +21,9 @@ module Admin::AdminHelper
 			html = content_tag :div, :class => "in", &block			
 		end
 	end
+
+	def translate_attribute(model, attribute)
+		model.human_attribute_name(attribute)
+	end
+	alias_method :ta, :translate_attribute
 end
