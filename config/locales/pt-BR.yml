@@ -17,7 +17,8 @@ ptBR:
       form:
         categories: Publicar com estas categorias
         slug: Defina uma url
-        author: "Post por:"  
+        author: "Post por:"
+		media: "Mídia"  
   
   number:
     format:

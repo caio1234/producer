@@ -9,4 +9,8 @@ module ApplicationHelper
 	def error_messages_for(resource)
 		render 'shared/error_messages', :resource => resource
 	end
+  
+  def textilize(text)
+    RedCloth.new(text).to_html.html_safe
+  end
 end

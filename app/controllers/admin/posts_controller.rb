@@ -1,4 +1,7 @@
 class Admin::PostsController < Admin::AdminController
+  
+  menu_item :posts
+  
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   before_filter :load_resources, :only => %w(new create edit update)
@@ -95,6 +98,7 @@ class Admin::PostsController < Admin::AdminController
 	def load_resources
 		@categories = Category.all
 		@authors = User.all
+    @assets = Asset.order("created_at DESC")
 	end
 	
 	

@@ -56466,3 +56466,1807 @@ ActionController::RoutingError (No route matches [GET] "/images/separator.png"):
   Rendered /home/vagrant/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (13.7ms)
   Rendered /home/vagrant/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.0ms)
   Rendered /home/vagrant/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (80.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateAssets (20141027170245)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "assets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141027170245"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Migrating to AddAttachmentDocumentToAssets (20141027173458)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (16.1ms)[0m  [1mALTER TABLE "assets" ADD "document_file_name" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "assets" ADD "document_content_type" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "assets" ADD "document_file_size" integer[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "assets" ADD "document_updated_at" datetime
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141027173458"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-10-28 07:17:45 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (16.8ms)[0m  SELECT "posts".* FROM "posts"  WHERE (draft = 'f' AND published_at < '2014-10-28 09:17:46.016722')
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/_sidebar.html.erb (5.4ms)
+  Rendered posts/index.html.erb within layouts/application (65.4ms)
+Completed 200 OK in 142ms (Views: 83.0ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-10-28 07:17:46 -0200
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"  WHERE (draft = 'f' AND published_at < '2014-10-28 09:17:46.138007')
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/_sidebar.html.erb (1.5ms)
+  Rendered posts/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 51ms (Views: 49.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-10-28 07:17:46 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-28 07:17:46 -0200
+
+
+Started GET "/assets/logo_header.png" for 127.0.0.1 at 2014-10-28 07:17:46 -0200
+
+
+Started GET "/javascripts/defaults.js" for 127.0.0.1 at 2014-10-28 07:17:46 -0200
+
+ActionController::RoutingError (No route matches [GET] "/javascripts/defaults.js"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.1ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.3ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (37.1ms)
+
+
+Started GET "/assets/blog.css?body=1" for 127.0.0.1 at 2014-10-28 07:17:46 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-10-28 07:17:46 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-10-28 07:17:46 -0200
+
+
+Started GET "/images/separator.png" for 127.0.0.1 at 2014-10-28 07:17:46 -0200
+
+ActionController::RoutingError (No route matches [GET] "/images/separator.png"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.1ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (36.3ms)
+
+
+Started GET "/images/bullet.png" for 127.0.0.1 at 2014-10-28 07:17:46 -0200
+
+ActionController::RoutingError (No route matches [GET] "/images/bullet.png"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.2ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.6ms)
+
+
+Started GET "/admin/posts" for 127.0.0.1 at 2014-10-28 07:17:52 -0200
+Processing by Admin::PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered admin/posts/index.html.erb within layouts/admin (119.9ms)
+Completed 200 OK in 528ms (Views: 527.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/posts" for 127.0.0.1 at 2014-10-28 07:17:52 -0200
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered admin/posts/index.html.erb within layouts/admin (1.7ms)
+Completed 200 OK in 57ms (Views: 56.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-10-28 07:17:52 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 07:17:52 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 07:17:52 -0200
+
+
+Started GET "/assets/assets.js?body=1" for 127.0.0.1 at 2014-10-28 07:17:52 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 07:17:52 -0200
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-10-28 07:17:52 -0200
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-28 07:17:52 -0200
+
+
+Started GET "/assets/post_categories.js?body=1" for 127.0.0.1 at 2014-10-28 07:17:52 -0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-10-28 07:17:52 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 07:17:52 -0200
+
+
+Started GET "/admin/posts/assets" for 127.0.0.1 at 2014-10-28 07:18:10 -0200
+Processing by Admin::PostsController#show as HTML
+  Parameters: {"id"=>"assets"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 3ms
+
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=assets):
+  app/controllers/admin/posts_controller.rb:85:in `set_post'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.4ms)
+
+
+Started GET "/admin/assets" for 127.0.0.1 at 2014-10-28 07:21:42 -0200
+
+ActionController::RoutingError (undefined method `menu_item' for Admin::AssetsController:Class):
+  app/controllers/admin/assets_controller.rb:3:in `<class:AssetsController>'
+  app/controllers/admin/assets_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.9ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (37.5ms)
+
+
+Started GET "/admin/assets" for 127.0.0.1 at 2014-10-28 07:22:39 -0200
+Processing by Admin::AssetsController#index as HTML
+  [1m[36mAsset Load (83.3ms)[0m  [1mSELECT "assets".* FROM "assets"[0m
+  Rendered admin/assets/index.html.erb within layouts/admin (87.3ms)
+Completed 500 Internal Server Error in 92ms
+
+ActionView::Template::Error (Missing partial admin/assets/_asset, admin/admin/_asset, application/_asset with {:locale=>[:ptBR], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/Users/caiooliveira/developer/producer/app/views"
+):
+    1: <h2>Assets</h2>
+    2: 
+    3: <table class="grid">
+    4:     <%= render(:partial => 'asset', :collection => @assets) || "You don't have any asset yet" %>
+    5: </table>
+    6: 
+    7: <hr class="thick" />
+  app/views/admin/assets/index.html.erb:4:in `_app_views_admin_assets_index_html_erb__3102806757302799255_70300069589960'
+  app/controllers/admin/assets_controller.rb:7:in `index'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.2ms)
+
+
+Started GET "/admin/assets" for 127.0.0.1 at 2014-10-28 07:28:20 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::AssetsController#index as HTML
+  Rendered admin/assets/index.html.erb within layouts/admin (0.7ms)
+Completed 500 Internal Server Error in 18ms
+
+SyntaxError (/Users/caiooliveira/developer/producer/app/views/admin/assets/index.html.erb:16: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/caiooliveira/developer/producer/app/views/admin/assets/index.html.erb:18: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/admin/assets/index.html.erb:16: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/admin/assets/index.html.erb:18: syntax error, unexpected end-of-input, expecting keyword_end
+  app/controllers/admin/assets_controller.rb:7:in `index'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.1ms)
+
+
+Started GET "/admin/assets" for 127.0.0.1 at 2014-10-28 07:28:57 -0200
+Processing by Admin::AssetsController#index as HTML
+  [1m[35mAsset Load (0.2ms)[0m  SELECT "assets".* FROM "assets"
+  Rendered admin/assets/_asset.html.erb (0.0ms)
+  Rendered admin/assets/index.html.erb within layouts/admin (4.4ms)
+Completed 200 OK in 94ms (Views: 93.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/assets/new" for 127.0.0.1 at 2014-10-28 07:29:00 -0200
+Processing by Admin::AssetsController#new as HTML
+  Rendered shared/_error_messages.html.erb (42.9ms)
+  Rendered admin/assets/_form.html.erb (69.9ms)
+  Rendered admin/assets/new.html.erb within layouts/admin (71.0ms)
+Completed 200 OK in 126ms (Views: 124.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/input_bg.gif" for 127.0.0.1 at 2014-10-28 07:29:00 -0200
+
+ActionController::RoutingError (No route matches [GET] "/images/input_bg.gif"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.9ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (41.3ms)
+
+
+Started POST "/admin/assets" for 127.0.0.1 at 2014-10-28 07:29:14 -0200
+Processing by Admin::AssetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xItCb29F4kXozrpMbIE/fF1x00vn3h+749kAChM5geo=", "asset"=>{"title"=>"teste", "document"=>#<ActionDispatch::Http::UploadedFile:0x007ff0cd4f2570 @tempfile=#<Tempfile:/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/RackMultipart20141028-908-wnwt7c>, @original_filename="Dragon-Ball-Z-Wallpaper-Background.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"asset[document]\"; filename=\"Dragon-Ball-Z-Wallpaper-Background.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Criar Asset"}
+Completed 500 Internal Server Error in 1ms
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/admin/assets_controller.rb:25:in `create'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.9ms)
+
+
+Started POST "/admin/assets" for 127.0.0.1 at 2014-10-28 07:29:50 -0200
+Processing by Admin::AssetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xItCb29F4kXozrpMbIE/fF1x00vn3h+749kAChM5geo=", "asset"=>{"title"=>"Primeiro upload", "document"=>#<ActionDispatch::Http::UploadedFile:0x007ff0cd250790 @tempfile=#<Tempfile:/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/RackMultipart20141028-908-1wne4l5>, @original_filename="A-MALDIÇÃO-DO-MAS-E-MAIS.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"asset[document]\"; filename=\"A-MALDI\xC3\x87\xC3\x83O-DO-MAS-E-MAIS.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Criar Asset"}
+Completed 500 Internal Server Error in 1ms
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/admin/assets_controller.rb:25:in `create'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.4ms)
+
+
+Started POST "/admin/assets" for 127.0.0.1 at 2014-10-28 07:31:34 -0200
+Processing by Admin::AssetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xItCb29F4kXozrpMbIE/fF1x00vn3h+749kAChM5geo=", "asset"=>{"title"=>"Primeiro upload", "document"=>#<ActionDispatch::Http::UploadedFile:0x007ff0ca523790 @tempfile=#<Tempfile:/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/RackMultipart20141028-908-ve1brq>, @original_filename="VAMOS-FALAR-SOBRE-SEXUALIDADE.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"asset[document]\"; filename=\"VAMOS-FALAR-SOBRE-SEXUALIDADE.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Criar Asset"}
+Completed 500 Internal Server Error in 1ms
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/admin/assets_controller.rb:25:in `create'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.5ms)
+
+
+Started POST "/admin/assets" for 127.0.0.1 at 2014-10-28 07:35:27 -0200
+Processing by Admin::AssetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xItCb29F4kXozrpMbIE/fF1x00vn3h+749kAChM5geo=", "asset"=>{"title"=>"Primeiro upload", "document"=>#<ActionDispatch::Http::UploadedFile:0x007ff0c99c17a8 @tempfile=#<Tempfile:/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/RackMultipart20141028-908-110hcek>, @original_filename="A-MALDIÇÃO-DO-MAS-E-MAIS.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"asset[document]\"; filename=\"A-MALDI\xC3\x87\xC3\x83O-DO-MAS-E-MAIS.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Criar Asset"}
+Command :: file -b --mime '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9d1193bca8e0b6f68145866b64dac40120141028-908-1041b14.png'
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9d1193bca8e0b6f68145866b64dac40120141028-908-knbeou.png'
+Binary data inserted for `string` type on column `document_content_type`
+  [1m[35mSQL (8.9ms)[0m  INSERT INTO "assets" ("created_at", "document_content_type", "document_file_name", "document_file_size", "document_updated_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-10-28 09:35:27.532355"], ["document_content_type", "image/png"], ["document_file_name", "A-MALDIÇÃO-DO-MAS-E-MAIS.png"], ["document_file_size", 66834], ["document_updated_at", "2014-10-28 09:35:27.449928"], ["title", "Primeiro upload"], ["updated_at", "2014-10-28 09:35:27.532355"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/admin/assets/1
+Completed 302 Found in 146ms (ActiveRecord: 11.4ms)
+
+
+Started GET "/admin/assets/1" for 127.0.0.1 at 2014-10-28 07:35:27 -0200
+Processing by Admin::AssetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAsset Load (0.2ms)[0m  SELECT  "assets".* FROM "assets"  WHERE "assets"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered admin/assets/show.html.erb within layouts/admin (11.6ms)
+Completed 500 Internal Server Error in 15ms
+
+ActionView::Template::Error (undefined method `edit_asset_path' for #<#<Class:0x007ff0ca4a6d08>:0x007ff0ca5daf58>):
+    5:   <%= @asset.title %>
+    6: </p>
+    7: 
+    8: <%= link_to 'Edit', edit_asset_path(@asset) %> |
+    9: <%= link_to 'Back', assets_path %>
+  app/views/admin/assets/show.html.erb:8:in `_app_views_admin_assets_show_html_erb__4567179536785240312_70336082019640'
+  app/controllers/admin/assets_controller.rb:21:in `show'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.8ms)
+
+
+Started GET "/admin/assets/1" for 127.0.0.1 at 2014-10-28 07:39:49 -0200
+Processing by Admin::AssetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAsset Load (0.1ms)[0m  [1mSELECT  "assets".* FROM "assets"  WHERE "assets"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered admin/assets/show.html.erb within layouts/admin (10.0ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (undefined method `edit_asset_path' for #<#<Class:0x007ff0ca4a6d08>:0x007ff0cd3ee700>):
+     5: 
+     6:   <div class="info">
+     7:     <p>
+     8:       <b>Title:</b>
+     9:       <%= @asset.title %>
+    10:       <span class="hint">
+    11:         (<%= number_to_human_size @asset.document_file_size %>)
+  app/views/admin/assets/show.html.erb:8:in `_app_views_admin_assets_show_html_erb__4567179536785240312_70336082019640'
+  app/controllers/admin/assets_controller.rb:21:in `show'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.5ms)
+
+
+Started GET "/admin/posts" for 127.0.0.1 at 2014-10-28 07:41:12 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered admin/posts/index.html.erb within layouts/admin (17.7ms)
+Completed 200 OK in 148ms (Views: 129.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-10-28 07:41:12 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:12 -0200
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-10-28 07:41:12 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:12 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:12 -0200
+
+
+Started GET "/assets/assets.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:12 -0200
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:12 -0200
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:12 -0200
+
+
+Started GET "/assets/post_categories.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:12 -0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:12 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:12 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-10-28 07:41:12 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-10-28 07:41:12 -0200
+
+
+Started GET "/admin/assets" for 127.0.0.1 at 2014-10-28 07:41:15 -0200
+Processing by Admin::AssetsController#index as HTML
+  [1m[36mAsset Load (0.2ms)[0m  [1mSELECT "assets".* FROM "assets"[0m
+  Rendered admin/assets/_asset.html.erb (3.3ms)
+  Rendered admin/assets/index.html.erb within layouts/admin (11.4ms)
+Completed 200 OK in 72ms (Views: 67.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-10-28 07:41:15 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:15 -0200
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-10-28 07:41:15 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:15 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:15 -0200
+
+
+Started GET "/assets/assets.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:15 -0200
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:15 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-10-28 07:41:15 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-10-28 07:41:15 -0200
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:15 -0200
+
+
+Started GET "/assets/post_categories.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:15 -0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:15 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:15 -0200
+
+
+Started GET "/system/assets/documents/000/000/001/thumb/A-MALDI%C3%87%C3%83O-DO-MAS-E-MAIS.png?1414488927" for 127.0.0.1 at 2014-10-28 07:41:15 -0200
+
+ActionController::RoutingError (No route matches [GET] "/system/assets/documents/000/000/001/thumb/A-MALDI%C3%87%C3%83O-DO-MAS-E-MAIS.png"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.1ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (10.3ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (64.1ms)
+
+
+Started GET "/admin/assets/new" for 127.0.0.1 at 2014-10-28 07:41:22 -0200
+Processing by Admin::AssetsController#new as HTML
+  Rendered shared/_error_messages.html.erb (2.4ms)
+  Rendered admin/assets/_form.html.erb (7.9ms)
+  Rendered admin/assets/new.html.erb within layouts/admin (9.1ms)
+Completed 200 OK in 70ms (Views: 68.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/input_bg.gif" for 127.0.0.1 at 2014-10-28 07:41:22 -0200
+
+ActionController::RoutingError (No route matches [GET] "/images/input_bg.gif"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.1ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (35.2ms)
+
+
+Started POST "/admin/assets" for 127.0.0.1 at 2014-10-28 07:41:33 -0200
+Processing by Admin::AssetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xItCb29F4kXozrpMbIE/fF1x00vn3h+749kAChM5geo=", "asset"=>{"title"=>"seg", "document"=>#<ActionDispatch::Http::UploadedFile:0x007fbe6a405cd8 @tempfile=#<Tempfile:/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/RackMultipart20141028-1006-erzudf>, @original_filename="VAMOS-FALAR-SOBRE-SEXUALIDADE.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"asset[document]\"; filename=\"VAMOS-FALAR-SOBRE-SEXUALIDADE.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Criar Asset"}
+Command :: file -b --mime '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9733c49bc66dc5818ba675a937eb124620141028-1006-148la94.png'
+  [1m[35m (0.2ms)[0m  begin transaction
+Command :: file -b --mime '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9733c49bc66dc5818ba675a937eb124620141028-1006-q3lz7x.png'
+Binary data inserted for `string` type on column `document_content_type`
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "assets" ("created_at", "document_content_type", "document_file_name", "document_file_size", "document_updated_at", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-28 09:41:33.293593"], ["document_content_type", "image/png"], ["document_file_name", "VAMOS-FALAR-SOBRE-SEXUALIDADE.png"], ["document_file_size", 68710], ["document_updated_at", "2014-10-28 09:41:33.273135"], ["title", "seg"], ["updated_at", "2014-10-28 09:41:33.293593"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/admin/assets/2
+Completed 302 Found in 73ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/admin/assets/2" for 127.0.0.1 at 2014-10-28 07:41:33 -0200
+Processing by Admin::AssetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAsset Load (0.2ms)[0m  [1mSELECT  "assets".* FROM "assets"  WHERE "assets"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered admin/assets/show.html.erb within layouts/admin (27.6ms)
+Completed 200 OK in 102ms (Views: 99.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-10-28 07:41:33 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:33 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:33 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:33 -0200
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-10-28 07:41:33 -0200
+
+
+Started GET "/assets/assets.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:33 -0200
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:33 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-10-28 07:41:33 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-10-28 07:41:33 -0200
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:33 -0200
+
+
+Started GET "/assets/post_categories.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:33 -0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:33 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 07:41:33 -0200
+
+
+Started GET "/system/assets/documents/000/000/002/medium/VAMOS-FALAR-SOBRE-SEXUALIDADE.png?1414489293" for 127.0.0.1 at 2014-10-28 07:41:33 -0200
+
+ActionController::RoutingError (No route matches [GET] "/system/assets/documents/000/000/002/medium/VAMOS-FALAR-SOBRE-SEXUALIDADE.png"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.2ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (33.1ms)
+
+
+Started GET "/admin/assets/2" for 127.0.0.1 at 2014-10-28 07:42:22 -0200
+Processing by Admin::AssetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mAsset Load (0.1ms)[0m  SELECT  "assets".* FROM "assets"  WHERE "assets"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered admin/assets/show.html.erb within layouts/admin (2.5ms)
+Completed 200 OK in 77ms (Views: 68.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-10-28 07:42:22 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 07:42:22 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 07:42:22 -0200
+
+
+Started GET "/assets/assets.js?body=1" for 127.0.0.1 at 2014-10-28 07:42:22 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 07:42:22 -0200
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-10-28 07:42:22 -0200
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-10-28 07:42:22 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-10-28 07:42:22 -0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-10-28 07:42:22 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-10-28 07:42:22 -0200
+
+
+Started GET "/assets/post_categories.js?body=1" for 127.0.0.1 at 2014-10-28 07:42:22 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 07:42:22 -0200
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-28 07:42:22 -0200
+
+
+Started GET "/system/assets/documents/000/000/002/medium/VAMOS-FALAR-SOBRE-SEXUALIDADE.png?1414489293" for 127.0.0.1 at 2014-10-28 07:42:22 -0200
+
+ActionController::RoutingError (No route matches [GET] "/system/assets/documents/000/000/002/medium/VAMOS-FALAR-SOBRE-SEXUALIDADE.png"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.0ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (43.9ms)
+
+
+Started GET "/admin/assets/2" for 127.0.0.1 at 2014-10-28 07:42:27 -0200
+Processing by Admin::AssetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAsset Load (0.1ms)[0m  [1mSELECT  "assets".* FROM "assets"  WHERE "assets"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered admin/assets/show.html.erb within layouts/admin (3.4ms)
+Completed 200 OK in 68ms (Views: 66.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-10-28 07:42:27 -0200
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-10-28 07:42:27 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 07:42:27 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 07:42:27 -0200
+
+
+Started GET "/assets/assets.js?body=1" for 127.0.0.1 at 2014-10-28 07:42:27 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 07:42:28 -0200
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-10-28 07:42:28 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-10-28 07:42:28 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-10-28 07:42:28 -0200
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-28 07:42:28 -0200
+
+
+Started GET "/assets/post_categories.js?body=1" for 127.0.0.1 at 2014-10-28 07:42:28 -0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-10-28 07:42:28 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 07:42:28 -0200
+
+
+Started GET "/system/assets/documents/000/000/002/medium/VAMOS-FALAR-SOBRE-SEXUALIDADE.png?1414489293" for 127.0.0.1 at 2014-10-28 07:42:28 -0200
+
+ActionController::RoutingError (No route matches [GET] "/system/assets/documents/000/000/002/medium/VAMOS-FALAR-SOBRE-SEXUALIDADE.png"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.3ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (35.4ms)
+
+
+Started GET "/admin/assets/2/edit" for 127.0.0.1 at 2014-10-28 07:42:39 -0200
+Processing by Admin::AssetsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mAsset Load (0.1ms)[0m  SELECT  "assets".* FROM "assets"  WHERE "assets"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered admin/assets/_form.html.erb (3.9ms)
+  Rendered admin/assets/edit.html.erb within layouts/admin (5.1ms)
+Completed 200 OK in 65ms (Views: 63.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/images/input_bg.gif" for 127.0.0.1 at 2014-10-28 07:42:39 -0200
+
+ActionController::RoutingError (No route matches [GET] "/images/input_bg.gif"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.9ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.4ms)
+
+
+Started PATCH "/admin/assets/2" for 127.0.0.1 at 2014-10-28 07:42:44 -0200
+Processing by Admin::AssetsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xItCb29F4kXozrpMbIE/fF1x00vn3h+749kAChM5geo=", "asset"=>{"title"=>"seg", "document"=>#<ActionDispatch::Http::UploadedFile:0x007fbe6a7c57b0 @tempfile=#<Tempfile:/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/RackMultipart20141028-1006-1ks6h2v>, @original_filename="A-MALDIÇÃO-DO-MAS-E-MAIS.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"asset[document]\"; filename=\"A-MALDI\xC3\x87\xC3\x83O-DO-MAS-E-MAIS.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Alterar Asset", "id"=>"2"}
+  [1m[36mAsset Load (0.2ms)[0m  [1mSELECT  "assets".* FROM "assets"  WHERE "assets"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 3ms
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/admin/assets_controller.rb:32:in `update'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.4ms)
+
+
+Started PATCH "/admin/assets/2" for 127.0.0.1 at 2014-10-28 07:43:29 -0200
+Processing by Admin::AssetsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xItCb29F4kXozrpMbIE/fF1x00vn3h+749kAChM5geo=", "asset"=>{"title"=>"seg", "document"=>#<ActionDispatch::Http::UploadedFile:0x007fbe6c2061b0 @tempfile=#<Tempfile:/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/RackMultipart20141028-1006-10vafh9>, @original_filename="A-MALDIÇÃO-DO-MAS-E-MAIS.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"asset[document]\"; filename=\"A-MALDI\xC3\x87\xC3\x83O-DO-MAS-E-MAIS.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Alterar Asset", "id"=>"2"}
+  [1m[35mAsset Load (0.1ms)[0m  SELECT  "assets".* FROM "assets"  WHERE "assets"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9d1193bca8e0b6f68145866b64dac40120141028-1006-13mckor.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9d1193bca8e0b6f68145866b64dac40120141028-1006-809cm7.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9d1193bca8e0b6f68145866b64dac40120141028-1006-809cm7.png[0]'
+Command :: convert '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9d1193bca8e0b6f68145866b64dac40120141028-1006-809cm7.png[0]' -auto-orient -resize "x300" -crop "300x300+282+0" +repage '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9d1193bca8e0b6f68145866b64dac40120141028-1006-809cm720141028-1006-3ym7bg'
+Command :: file -b --mime '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9d1193bca8e0b6f68145866b64dac40120141028-1006-809cm720141028-1006-3ym7bg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9d1193bca8e0b6f68145866b64dac40120141028-1006-809cm7.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9d1193bca8e0b6f68145866b64dac40120141028-1006-809cm7.png[0]'
+Command :: convert '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9d1193bca8e0b6f68145866b64dac40120141028-1006-809cm7.png[0]' -auto-orient -resize "50x50" '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9d1193bca8e0b6f68145866b64dac40120141028-1006-809cm720141028-1006-1thi8ns'
+Command :: file -b --mime '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9d1193bca8e0b6f68145866b64dac40120141028-1006-809cm720141028-1006-1thi8ns'
+Command :: file -b --mime '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9d1193bca8e0b6f68145866b64dac40120141028-1006-1hemmr6.png'
+  [1m[35mSQL (0.4ms)[0m  UPDATE "assets" SET "document_file_name" = ?, "document_file_size" = ?, "document_updated_at" = ?, "updated_at" = ? WHERE "assets"."id" = 2  [["document_file_name", "A-MALDIÇÃO-DO-MAS-E-MAIS.png"], ["document_file_size", 66834], ["document_updated_at", "2014-10-28 09:43:29.932632"], ["updated_at", "2014-10-28 09:43:30.792151"]]
+[paperclip] deleting /Users/caiooliveira/developer/producer/public/system/assets/documents/000/000/002/original/VAMOS-FALAR-SOBRE-SEXUALIDADE.png
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/admin/assets/2
+Completed 302 Found in 916ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/admin/assets/2" for 127.0.0.1 at 2014-10-28 07:43:30 -0200
+Processing by Admin::AssetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mAsset Load (0.2ms)[0m  SELECT  "assets".* FROM "assets"  WHERE "assets"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered admin/assets/show.html.erb within layouts/admin (3.5ms)
+Completed 200 OK in 70ms (Views: 68.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-10-28 07:43:30 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 07:43:30 -0200
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-10-28 07:43:30 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 07:43:30 -0200
+
+
+Started GET "/assets/assets.js?body=1" for 127.0.0.1 at 2014-10-28 07:43:30 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 07:43:30 -0200
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-10-28 07:43:30 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-10-28 07:43:30 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-10-28 07:43:30 -0200
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-28 07:43:30 -0200
+
+
+Started GET "/assets/post_categories.js?body=1" for 127.0.0.1 at 2014-10-28 07:43:30 -0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-10-28 07:43:30 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 07:43:30 -0200
+
+
+Started GET "/admin/assets" for 127.0.0.1 at 2014-10-28 07:43:37 -0200
+Processing by Admin::AssetsController#index as HTML
+  [1m[36mAsset Load (0.2ms)[0m  [1mSELECT "assets".* FROM "assets"[0m
+  Rendered admin/assets/_asset.html.erb (4.1ms)
+  Rendered admin/assets/index.html.erb within layouts/admin (5.4ms)
+Completed 200 OK in 75ms (Views: 74.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/system/assets/documents/000/000/001/thumb/A-MALDI%C3%87%C3%83O-DO-MAS-E-MAIS.png?1414488927" for 127.0.0.1 at 2014-10-28 07:43:37 -0200
+
+ActionController::RoutingError (No route matches [GET] "/system/assets/documents/000/000/001/thumb/A-MALDI%C3%87%C3%83O-DO-MAS-E-MAIS.png"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.9ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (33.4ms)
+
+
+Started GET "/admin/assets/1/edit" for 127.0.0.1 at 2014-10-28 07:43:39 -0200
+Processing by Admin::AssetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAsset Load (0.1ms)[0m  SELECT  "assets".* FROM "assets"  WHERE "assets"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered admin/assets/_form.html.erb (2.9ms)
+  Rendered admin/assets/edit.html.erb within layouts/admin (3.6ms)
+Completed 200 OK in 62ms (Views: 61.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/images/input_bg.gif" for 127.0.0.1 at 2014-10-28 07:43:39 -0200
+
+ActionController::RoutingError (No route matches [GET] "/images/input_bg.gif"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.0ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (30.3ms)
+
+
+Started PATCH "/admin/assets/1" for 127.0.0.1 at 2014-10-28 07:43:49 -0200
+Processing by Admin::AssetsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xItCb29F4kXozrpMbIE/fF1x00vn3h+749kAChM5geo=", "asset"=>{"title"=>"Primeiro upload", "document"=>#<ActionDispatch::Http::UploadedFile:0x007fbe6c499918 @tempfile=#<Tempfile:/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/RackMultipart20141028-1006-bh5vn6>, @original_filename="VAMOS-FALAR-SOBRE-SEXUALIDADE.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"asset[document]\"; filename=\"VAMOS-FALAR-SOBRE-SEXUALIDADE.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Alterar Asset", "id"=>"1"}
+  [1m[36mAsset Load (0.1ms)[0m  [1mSELECT  "assets".* FROM "assets"  WHERE "assets"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+Command :: file -b --mime '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9733c49bc66dc5818ba675a937eb124620141028-1006-1mh7z43.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9733c49bc66dc5818ba675a937eb124620141028-1006-1tb8u4n.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9733c49bc66dc5818ba675a937eb124620141028-1006-1tb8u4n.png[0]'
+Command :: convert '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9733c49bc66dc5818ba675a937eb124620141028-1006-1tb8u4n.png[0]' -auto-orient -resize "x300" -crop "300x300+113+0" +repage '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9733c49bc66dc5818ba675a937eb124620141028-1006-1tb8u4n20141028-1006-jvwy9a'
+Command :: file -b --mime '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9733c49bc66dc5818ba675a937eb124620141028-1006-1tb8u4n20141028-1006-jvwy9a'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9733c49bc66dc5818ba675a937eb124620141028-1006-1tb8u4n.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9733c49bc66dc5818ba675a937eb124620141028-1006-1tb8u4n.png[0]'
+Command :: convert '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9733c49bc66dc5818ba675a937eb124620141028-1006-1tb8u4n.png[0]' -auto-orient -resize "50x50" '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9733c49bc66dc5818ba675a937eb124620141028-1006-1tb8u4n20141028-1006-nrsa3i'
+Command :: file -b --mime '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9733c49bc66dc5818ba675a937eb124620141028-1006-1tb8u4n20141028-1006-nrsa3i'
+Command :: file -b --mime '/var/folders/8r/2zbjs3ts6mb9v1lp81d3r64c0000gn/T/9733c49bc66dc5818ba675a937eb124620141028-1006-k5m6bg.png'
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "assets" SET "document_file_name" = ?, "document_file_size" = ?, "document_updated_at" = ?, "updated_at" = ? WHERE "assets"."id" = 1[0m  [["document_file_name", "VAMOS-FALAR-SOBRE-SEXUALIDADE.png"], ["document_file_size", 68710], ["document_updated_at", "2014-10-28 09:43:49.678384"], ["updated_at", "2014-10-28 09:43:49.856278"]]
+[paperclip] deleting /Users/caiooliveira/developer/producer/public/system/assets/documents/000/000/001/original/A-MALDIÇÃO-DO-MAS-E-MAIS.png
+  [1m[35m (2.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/admin/assets/1
+Completed 302 Found in 229ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/admin/assets/1" for 127.0.0.1 at 2014-10-28 07:43:49 -0200
+Processing by Admin::AssetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAsset Load (0.1ms)[0m  [1mSELECT  "assets".* FROM "assets"  WHERE "assets"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered admin/assets/show.html.erb within layouts/admin (2.5ms)
+Completed 200 OK in 77ms (Views: 75.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-10-28 07:43:49 -0200
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-10-28 07:43:49 -0200
+
+
+Started GET "/assets/assets.js?body=1" for 127.0.0.1 at 2014-10-28 07:43:49 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 07:43:49 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 07:43:50 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 07:43:50 -0200
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-10-28 07:43:50 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-10-28 07:43:50 -0200
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-10-28 07:43:50 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-10-28 07:43:50 -0200
+
+
+Started GET "/assets/post_categories.js?body=1" for 127.0.0.1 at 2014-10-28 07:43:50 -0200
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2014-10-28 07:43:50 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 07:43:50 -0200
+
+
+Started GET "/admin/assets" for 127.0.0.1 at 2014-10-28 07:43:53 -0200
+Processing by Admin::AssetsController#index as HTML
+  [1m[35mAsset Load (0.1ms)[0m  SELECT "assets".* FROM "assets"
+  Rendered admin/assets/_asset.html.erb (4.1ms)
+  Rendered admin/assets/index.html.erb within layouts/admin (5.4ms)
+Completed 200 OK in 69ms (Views: 68.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/posts" for 127.0.0.1 at 2014-10-28 08:03:33 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered admin/posts/index.html.erb within layouts/admin (17.4ms)
+Completed 500 Internal Server Error in 39ms
+
+ActionView::Template::Error (can not load translations from /Users/caiooliveira/developer/producer/config/locales/en.yml: #<Psych::SyntaxError: (/Users/caiooliveira/developer/producer/config/locales/en.yml): found character that cannot start any token while scanning for the next token at line 23 column 1>):
+     7:       <%= link_to post.title.titleize, [:admin, post] %>
+     8: 
+     9:       <div class="right">
+    10:         <%= link_to_edit [:edit, :admin, post] %>, 
+    11:         <%= link_to_destroy [:admin, post] %>
+    12:       </div>
+    13:     <% end %>
+  app/helpers/admin/admin_helper.rb:9:in `link_to_edit'
+  app/views/admin/posts/index.html.erb:10:in `block (2 levels) in _app_views_admin_posts_index_html_erb__517813279618664974_70171509733680'
+  app/views/admin/posts/index.html.erb:6:in `block in _app_views_admin_posts_index_html_erb__517813279618664974_70171509733680'
+  app/views/admin/posts/index.html.erb:5:in `_app_views_admin_posts_index_html_erb__517813279618664974_70171509733680'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.4ms)
+
+
+Started GET "/admin/assets/1/edit" for 127.0.0.1 at 2014-10-28 08:04:30 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::AssetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAsset Load (0.2ms)[0m  SELECT  "assets".* FROM "assets"  WHERE "assets"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered shared/_error_messages.html.erb (1.9ms)
+  Rendered admin/assets/_form.html.erb (14.4ms)
+  Rendered admin/assets/edit.html.erb within layouts/admin (18.0ms)
+Completed 500 Internal Server Error in 40ms
+
+ActionView::Template::Error (can not load translations from /Users/caiooliveira/developer/producer/config/locales/en.yml: #<Psych::SyntaxError: (/Users/caiooliveira/developer/producer/config/locales/en.yml): found character that cannot start any token while scanning for the next token at line 23 column 1>):
+    2:   <%= error_messages_for @asset %>
+    3: 
+    4:   <div class="field">
+    5:     <%= f.label :title %><br />
+    6:     <%= f.text_field :title %>
+    7:   </div>
+    8:   
+  app/views/admin/assets/_form.html.erb:5:in `block in _app_views_admin_assets__form_html_erb___2022687956321256325_70138524236960'
+  app/views/admin/assets/_form.html.erb:1:in `_app_views_admin_assets__form_html_erb___2022687956321256325_70138524236960'
+  app/views/admin/assets/edit.html.erb:3:in `_app_views_admin_assets_edit_html_erb__3259012797678828182_70138524327760'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.4ms)
+
+
+Started GET "/admin/assets/1/edit" for 127.0.0.1 at 2014-10-28 08:04:30 -0200
+Processing by Admin::AssetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAsset Load (0.1ms)[0m  [1mSELECT  "assets".* FROM "assets"  WHERE "assets"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered admin/assets/_form.html.erb (6.9ms)
+  Rendered admin/assets/edit.html.erb within layouts/admin (7.9ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (can not load translations from /Users/caiooliveira/developer/producer/config/locales/en.yml: #<Psych::SyntaxError: (/Users/caiooliveira/developer/producer/config/locales/en.yml): found character that cannot start any token while scanning for the next token at line 23 column 1>):
+    2:   <%= error_messages_for @asset %>
+    3: 
+    4:   <div class="field">
+    5:     <%= f.label :title %><br />
+    6:     <%= f.text_field :title %>
+    7:   </div>
+    8:   
+  app/views/admin/assets/_form.html.erb:5:in `block in _app_views_admin_assets__form_html_erb___2022687956321256325_70138519597920'
+  app/views/admin/assets/_form.html.erb:1:in `_app_views_admin_assets__form_html_erb___2022687956321256325_70138519597920'
+  app/views/admin/assets/edit.html.erb:3:in `_app_views_admin_assets_edit_html_erb__3259012797678828182_70138519616360'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.8ms)
+
+
+Started GET "/admin/posts" for 127.0.0.1 at 2014-10-28 08:04:35 -0200
+Processing by Admin::PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered admin/posts/index.html.erb within layouts/admin (11.8ms)
+Completed 500 Internal Server Error in 25ms
+
+ActionView::Template::Error (can not load translations from /Users/caiooliveira/developer/producer/config/locales/en.yml: #<Psych::SyntaxError: (/Users/caiooliveira/developer/producer/config/locales/en.yml): found character that cannot start any token while scanning for the next token at line 23 column 1>):
+     7:       <%= link_to post.title.titleize, [:admin, post] %>
+     8: 
+     9:       <div class="right">
+    10:         <%= link_to_edit [:edit, :admin, post] %>, 
+    11:         <%= link_to_destroy [:admin, post] %>
+    12:       </div>
+    13:     <% end %>
+  app/helpers/admin/admin_helper.rb:9:in `link_to_edit'
+  app/views/admin/posts/index.html.erb:10:in `block (2 levels) in _app_views_admin_posts_index_html_erb__3573202080951829819_70138514527520'
+  app/views/admin/posts/index.html.erb:6:in `block in _app_views_admin_posts_index_html_erb__3573202080951829819_70138514527520'
+  app/views/admin/posts/index.html.erb:5:in `_app_views_admin_posts_index_html_erb__3573202080951829819_70138514527520'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.5ms)
+
+
+Started GET "/admin/assets" for 127.0.0.1 at 2014-10-28 08:04:45 -0200
+Processing by Admin::AssetsController#index as HTML
+  [1m[36mAsset Load (0.2ms)[0m  [1mSELECT "assets".* FROM "assets"[0m
+  Rendered admin/assets/_asset.html.erb (6.9ms)
+  Rendered admin/assets/index.html.erb within layouts/admin (9.1ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (can not load translations from /Users/caiooliveira/developer/producer/config/locales/en.yml: #<Psych::SyntaxError: (/Users/caiooliveira/developer/producer/config/locales/en.yml): found character that cannot start any token while scanning for the next token at line 23 column 1>):
+     6:     <%= link_to asset.title, [:admin, asset] %>
+     7:   </td>
+     8:   <td style="width:15%; text-align:right;">
+     9:     <%= link_to_edit [:edit, :admin, asset] %>
+    10:     <%= link_to_destroy [:admin, asset] %>
+    11:   </td>
+    12: <% end %>
+  app/helpers/admin/admin_helper.rb:9:in `link_to_edit'
+  app/views/admin/assets/_asset.html.erb:9:in `block in _app_views_admin_assets__asset_html_erb___3128273888651453978_70138539064880'
+  app/views/admin/assets/_asset.html.erb:1:in `_app_views_admin_assets__asset_html_erb___3128273888651453978_70138539064880'
+  app/views/admin/assets/index.html.erb:4:in `_app_views_admin_assets_index_html_erb___4086303806827448156_70138539122000'
+  app/controllers/admin/assets_controller.rb:7:in `index'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.1ms)
+
+
+Started GET "/admin/posts" for 127.0.0.1 at 2014-10-28 08:04:51 -0200
+Processing by Admin::PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered admin/posts/index.html.erb within layouts/admin (5.5ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (can not load translations from /Users/caiooliveira/developer/producer/config/locales/en.yml: #<Psych::SyntaxError: (/Users/caiooliveira/developer/producer/config/locales/en.yml): found character that cannot start any token while scanning for the next token at line 23 column 1>):
+     7:       <%= link_to post.title.titleize, [:admin, post] %>
+     8: 
+     9:       <div class="right">
+    10:         <%= link_to_edit [:edit, :admin, post] %>, 
+    11:         <%= link_to_destroy [:admin, post] %>
+    12:       </div>
+    13:     <% end %>
+  app/helpers/admin/admin_helper.rb:9:in `link_to_edit'
+  app/views/admin/posts/index.html.erb:10:in `block (2 levels) in _app_views_admin_posts_index_html_erb__3573202080951829819_70138514527520'
+  app/views/admin/posts/index.html.erb:6:in `block in _app_views_admin_posts_index_html_erb__3573202080951829819_70138514527520'
+  app/views/admin/posts/index.html.erb:5:in `_app_views_admin_posts_index_html_erb__3573202080951829819_70138514527520'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.3ms)
+
+
+Started GET "/admin/posts" for 127.0.0.1 at 2014-10-28 08:10:54 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered admin/posts/index.html.erb within layouts/admin (14.8ms)
+Completed 500 Internal Server Error in 38ms
+
+ActionView::Template::Error (can not load translations from /Users/caiooliveira/developer/producer/config/locales/en.yml: #<Psych::SyntaxError: (/Users/caiooliveira/developer/producer/config/locales/en.yml): found character that cannot start any token while scanning for the next token at line 23 column 1>):
+     7:       <%= link_to post.title.titleize, [:admin, post] %>
+     8: 
+     9:       <div class="right">
+    10:         <%= link_to_edit [:edit, :admin, post] %>, 
+    11:         <%= link_to_destroy [:admin, post] %>
+    12:       </div>
+    13:     <% end %>
+  app/helpers/admin/admin_helper.rb:9:in `link_to_edit'
+  app/views/admin/posts/index.html.erb:10:in `block (2 levels) in _app_views_admin_posts_index_html_erb___2948576957517282005_70250270573660'
+  app/views/admin/posts/index.html.erb:6:in `block in _app_views_admin_posts_index_html_erb___2948576957517282005_70250270573660'
+  app/views/admin/posts/index.html.erb:5:in `_app_views_admin_posts_index_html_erb___2948576957517282005_70250270573660'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-10-28 08:11:04 -0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"  WHERE (draft = 'f' AND published_at < '2014-10-28 10:11:04.323058')[0m
+  Rendered posts/index.html.erb within layouts/application (10.2ms)
+Completed 500 Internal Server Error in 18ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 0)):
+     7:       <h2><%= link_to post.title.titleize, post %></h2>
+     8: 
+     9:       <div id="post">
+    10:         <%= textilize post.excerpt %>
+    11: 
+    12:         <p><%= link_to "continue ...", post %></p>
+    13:       </div>
+  app/helpers/application_helper.rb:13:in `textilize'
+  app/views/posts/index.html.erb:10:in `block in _app_views_posts_index_html_erb__2246697163963049471_70250268122660'
+  app/views/posts/index.html.erb:6:in `_app_views_posts_index_html_erb__2246697163963049471_70250268122660'
+  app/controllers/posts_controller.rb:10:in `index'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-10-28 08:13:05 -0200
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts"  WHERE (draft = 'f' AND published_at < '2014-10-28 10:13:05.855088')
+  Rendered posts/index.html.erb within layouts/application (12.5ms)
+Completed 500 Internal Server Error in 23ms
+
+ActionView::Template::Error (undefined method `to_heml' for "Primeiro":RedCloth::TextileDoc):
+     7:       <h2><%= link_to post.title.titleize, post %></h2>
+     8: 
+     9:       <div id="post">
+    10:         <%= textilize post.excerpt %>
+    11: 
+    12:         <p><%= link_to "continue ...", post %></p>
+    13:       </div>
+  app/helpers/application_helper.rb:14:in `textilize'
+  app/views/posts/index.html.erb:10:in `block in _app_views_posts_index_html_erb__2246697163963049471_70250268122660'
+  app/views/posts/index.html.erb:6:in `_app_views_posts_index_html_erb__2246697163963049471_70250268122660'
+  app/controllers/posts_controller.rb:10:in `index'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-10-28 08:13:20 -0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"  WHERE (draft = 'f' AND published_at < '2014-10-28 10:13:20.131552')[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered posts/_sidebar.html.erb (4.9ms)
+  Rendered posts/index.html.erb within layouts/application (21.9ms)
+Completed 500 Internal Server Error in 33ms
+
+SyntaxError (/Users/caiooliveira/developer/producer/app/views/layouts/application.html.erb:10: syntax error, unexpected tIDENTIFIER, expecting ')'
+  <div id="wrapper">
+                  ^
+/Users/caiooliveira/developer/producer/app/views/layouts/application.html.erb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+    <div id="header">
+                   ^
+/Users/caiooliveira/developer/producer/app/views/layouts/application.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting ')'
+      <div id="logo">
+                   ^
+/Users/caiooliveira/developer/producer/app/views/layouts/application.html.erb:13: syntax error, unexpected tIDENTIFIER, expecting ')'
+...append=( image_tag "logo_header.png", :class => "middle" );@...
+...                               ^
+/Users/caiooliveira/developer/producer/app/views/layouts/application.html.erb:13: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._header.png", :class => "middle" );@output_buffer.safe_appen...
+...                               ^
+/Users/caiooliveira/developer/producer/app/views/layouts/application.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+      <div id="main-nav">
+                   ^
+/Users/caiooliveira/developer/producer/app/views/layouts/application.html.erb:16: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+      <div id="main-nav">
+                        ^
+/Users/caiooliveira/developer/producer/app/views/layouts/application.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+    <div id="content">
+                    ^
+/Users/caiooliveira/developer/producer/app/views/layouts/application.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+    <div id="footer">
+                   ^
+/Users/caiooliveira/developer/producer/app/views/layouts/application.html.erb:51: syntax error, unexpected tIDENTIFIER, expecting ')'
+      <div id="footer-nav">
+                     ^
+/Users/caiooliveira/developer/producer/app/views/layouts/application.html.erb:51: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+      <div id="footer-nav">
+                          ^
+/Users/caiooliveira/developer/producer/app/views/layouts/application.html.erb:51: unterminated string meets end of file):
+  app/views/layouts/application.html.erb:10: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/layouts/application.html.erb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/layouts/application.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/layouts/application.html.erb:13: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/layouts/application.html.erb:13: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/layouts/application.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/layouts/application.html.erb:16: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/layouts/application.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/layouts/application.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/layouts/application.html.erb:51: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/layouts/application.html.erb:51: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/layouts/application.html.erb:51: unterminated string meets end of file
+  app/controllers/posts_controller.rb:10:in `index'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-10-28 08:17:40 -0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"  WHERE (draft = 'f' AND published_at < '2014-10-28 10:17:40.864935')[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered posts/_sidebar.html.erb (1.1ms)
+  Rendered posts/index.html.erb within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 12ms
+
+SyntaxError (/Users/caiooliveira/developer/producer/app/views/layouts/application.html.erb:10: syntax error, unexpected tIDENTIFIER, expecting ')'
+  <div id="wrapper">
+                  ^
+/Users/caiooliveira/developer/producer/app/views/layouts/application.html.erb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+    <div id="header">
+                   ^
+/Users/caiooliveira/developer/producer/app/views/layouts/application.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting ')'
+      <div id="logo">
+                   ^
+/Users/caiooliveira/developer/producer/app/views/layouts/application.html.erb:13: syntax error, unexpected tIDENTIFIER, expecting ')'
+...append=( image_tag "logo_header.png", :class => "middle" );@...
+...                               ^
+/Users/caiooliveira/developer/producer/app/views/layouts/application.html.erb:13: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._header.png", :class => "middle" );@output_buffer.safe_appen...
+...                               ^
+/Users/caiooliveira/developer/producer/app/views/layouts/application.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+      <div id="main-nav">
+                   ^
+/Users/caiooliveira/developer/producer/app/views/layouts/application.html.erb:16: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+      <div id="main-nav">
+                        ^
+/Users/caiooliveira/developer/producer/app/views/layouts/application.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+    <div id="content">
+                    ^
+/Users/caiooliveira/developer/producer/app/views/layouts/application.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+    <div id="footer">
+                   ^
+/Users/caiooliveira/developer/producer/app/views/layouts/application.html.erb:51: syntax error, unexpected tIDENTIFIER, expecting ')'
+      <div id="footer-nav">
+                     ^
+/Users/caiooliveira/developer/producer/app/views/layouts/application.html.erb:51: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+      <div id="footer-nav">
+                          ^
+/Users/caiooliveira/developer/producer/app/views/layouts/application.html.erb:51: unterminated string meets end of file):
+  app/views/layouts/application.html.erb:10: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/layouts/application.html.erb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/layouts/application.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/layouts/application.html.erb:13: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/layouts/application.html.erb:13: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/layouts/application.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/layouts/application.html.erb:16: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/layouts/application.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/layouts/application.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/layouts/application.html.erb:51: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/layouts/application.html.erb:51: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/layouts/application.html.erb:51: unterminated string meets end of file
+  app/controllers/posts_controller.rb:10:in `index'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-10-28 08:17:56 -0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"  WHERE (draft = 'f' AND published_at < '2014-10-28 10:17:56.867625')[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered posts/_sidebar.html.erb (1.3ms)
+  Rendered posts/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 75ms (Views: 73.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-10-28 08:17:56 -0200
+
+
+Started GET "/assets/blog.css?body=1" for 127.0.0.1 at 2014-10-28 08:17:57 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-28 08:17:57 -0200
+
+
+Started GET "/assets/logo_header.png" for 127.0.0.1 at 2014-10-28 08:17:57 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-10-28 08:17:57 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-10-28 08:17:57 -0200
+
+
+Started GET "/admin/posts" for 127.0.0.1 at 2014-10-28 08:18:04 -0200
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered admin/posts/index.html.erb within layouts/admin (5.7ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (can not load translations from /Users/caiooliveira/developer/producer/config/locales/en.yml: #<Psych::SyntaxError: (/Users/caiooliveira/developer/producer/config/locales/en.yml): found character that cannot start any token while scanning for the next token at line 23 column 1>):
+     7:       <%= link_to post.title.titleize, [:admin, post] %>
+     8: 
+     9:       <div class="right">
+    10:         <%= link_to_edit [:edit, :admin, post] %>, 
+    11:         <%= link_to_destroy [:admin, post] %>
+    12:       </div>
+    13:     <% end %>
+  app/helpers/admin/admin_helper.rb:9:in `link_to_edit'
+  app/views/admin/posts/index.html.erb:10:in `block (2 levels) in _app_views_admin_posts_index_html_erb___2948576957517282005_70250270573660'
+  app/views/admin/posts/index.html.erb:6:in `block in _app_views_admin_posts_index_html_erb___2948576957517282005_70250270573660'
+  app/views/admin/posts/index.html.erb:5:in `_app_views_admin_posts_index_html_erb___2948576957517282005_70250270573660'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.0ms)
+
+
+Started GET "/admin/posts" for 127.0.0.1 at 2014-10-28 08:34:44 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered admin/posts/index.html.erb within layouts/admin (15.1ms)
+Completed 500 Internal Server Error in 40ms
+
+ActionView::Template::Error (can not load translations from /Users/caiooliveira/developer/producer/config/locales/en.yml: #<Psych::SyntaxError: (/Users/caiooliveira/developer/producer/config/locales/en.yml): found character that cannot start any token while scanning for the next token at line 23 column 1>):
+     7:       <%= link_to post.title.titleize, [:admin, post] %>
+     8: 
+     9:       <div class="right">
+    10:         <%= link_to_edit [:edit, :admin, post] %>, 
+    11:         <%= link_to_destroy [:admin, post] %>
+    12:       </div>
+    13:     <% end %>
+  app/helpers/admin/admin_helper.rb:9:in `link_to_edit'
+  app/views/admin/posts/index.html.erb:10:in `block (2 levels) in _app_views_admin_posts_index_html_erb__4011524212171878202_70309604210980'
+  app/views/admin/posts/index.html.erb:6:in `block in _app_views_admin_posts_index_html_erb__4011524212171878202_70309604210980'
+  app/views/admin/posts/index.html.erb:5:in `_app_views_admin_posts_index_html_erb__4011524212171878202_70309604210980'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.5ms)
+
+
+Started GET "/admin/posts" for 127.0.0.1 at 2014-10-28 08:37:47 -0200
+Processing by Admin::PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered admin/posts/index.html.erb within layouts/admin (17.7ms)
+Completed 500 Internal Server Error in 26ms
+
+ActionView::Template::Error (can not load translations from /Users/caiooliveira/developer/producer/config/locales/en.yml: #<Psych::SyntaxError: (/Users/caiooliveira/developer/producer/config/locales/en.yml): found character that cannot start any token while scanning for the next token at line 23 column 1>):
+     7:       <%= link_to post.title.titleize, [:admin, post] %>
+     8: 
+     9:       <div class="right">
+    10:         <%= link_to_edit [:edit, :admin, post] %>, 
+    11:         <%= link_to_destroy [:admin, post] %>
+    12:       </div>
+    13:     <% end %>
+  app/helpers/admin/admin_helper.rb:9:in `link_to_edit'
+  app/views/admin/posts/index.html.erb:10:in `block (2 levels) in _app_views_admin_posts_index_html_erb__4011524212171878202_70309604210980'
+  app/views/admin/posts/index.html.erb:6:in `block in _app_views_admin_posts_index_html_erb__4011524212171878202_70309604210980'
+  app/views/admin/posts/index.html.erb:5:in `_app_views_admin_posts_index_html_erb__4011524212171878202_70309604210980'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.9ms)
+
+
+Started GET "/admin/assets" for 127.0.0.1 at 2014-10-28 08:37:51 -0200
+Processing by Admin::AssetsController#index as HTML
+  [1m[35mAsset Load (0.2ms)[0m  SELECT "assets".* FROM "assets"
+  Rendered admin/assets/_asset.html.erb (6.9ms)
+  Rendered admin/assets/index.html.erb within layouts/admin (14.5ms)
+Completed 500 Internal Server Error in 19ms
+
+ActionView::Template::Error (can not load translations from /Users/caiooliveira/developer/producer/config/locales/en.yml: #<Psych::SyntaxError: (/Users/caiooliveira/developer/producer/config/locales/en.yml): found character that cannot start any token while scanning for the next token at line 23 column 1>):
+     6:     <%= link_to asset.title, [:admin, asset] %>
+     7:   </td>
+     8:   <td style="width:15%; text-align:right;">
+     9:     <%= link_to_edit [:edit, :admin, asset] %>
+    10:     <%= link_to_destroy [:admin, asset] %>
+    11:   </td>
+    12: <% end %>
+  app/helpers/admin/admin_helper.rb:9:in `link_to_edit'
+  app/views/admin/assets/_asset.html.erb:9:in `block in _app_views_admin_assets__asset_html_erb__1786878404047716641_70309616419760'
+  app/views/admin/assets/_asset.html.erb:1:in `_app_views_admin_assets__asset_html_erb__1786878404047716641_70309616419760'
+  app/views/admin/assets/index.html.erb:4:in `_app_views_admin_assets_index_html_erb__3216150209352268148_70309616751480'
+  app/controllers/admin/assets_controller.rb:7:in `index'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.6ms)
+
+
+Started GET "/admin/posts" for 127.0.0.1 at 2014-10-28 08:47:05 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered admin/posts/index.html.erb within layouts/admin (15.7ms)
+Completed 500 Internal Server Error in 41ms
+
+ActionView::Template::Error (can not load translations from /Users/caiooliveira/developer/producer/config/locales/en.yml: #<Psych::SyntaxError: (/Users/caiooliveira/developer/producer/config/locales/en.yml): found character that cannot start any token while scanning for the next token at line 23 column 1>):
+     7:       <%= link_to post.title.titleize, [:admin, post] %>
+     8: 
+     9:       <div class="right">
+    10:         <%= link_to_edit [:edit, :admin, post] %>, 
+    11:         <%= link_to_destroy [:admin, post] %>
+    12:       </div>
+    13:     <% end %>
+  app/helpers/admin/admin_helper.rb:9:in `link_to_edit'
+  app/views/admin/posts/index.html.erb:10:in `block (2 levels) in _app_views_admin_posts_index_html_erb__480994844923176787_70197051932880'
+  app/views/admin/posts/index.html.erb:6:in `block in _app_views_admin_posts_index_html_erb__480994844923176787_70197051932880'
+  app/views/admin/posts/index.html.erb:5:in `_app_views_admin_posts_index_html_erb__480994844923176787_70197051932880'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-28 08:47:09 -0200
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 66ms (Views: 64.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-28 08:47:09 -0200
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-10-28 08:47:09 -0200
+
+
+Started GET "/assets/logo_header.png" for 127.0.0.1 at 2014-10-28 08:47:09 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-10-28 08:47:09 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-10-28 08:47:09 -0200
+
+
+Started GET "/assets/banner.jpg" for 127.0.0.1 at 2014-10-28 08:47:09 -0200
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-10-28 08:47:11 -0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"  WHERE (draft = 'f' AND published_at < '2014-10-28 10:47:11.223449')[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered posts/_sidebar.html.erb (4.4ms)
+  Rendered posts/index.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 60ms (Views: 52.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-10-28 08:47:11 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-28 08:47:11 -0200
+
+
+Started GET "/assets/logo_header.png" for 127.0.0.1 at 2014-10-28 08:47:11 -0200
+
+
+Started GET "/assets/blog.css?body=1" for 127.0.0.1 at 2014-10-28 08:47:11 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-10-28 08:47:11 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-10-28 08:47:11 -0200
+
+
+Started GET "/posts/22-primeiro" for 127.0.0.1 at 2014-10-28 08:47:13 -0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"22-primeiro"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE (draft = 'f' AND published_at < '2014-10-28 10:47:13.595106') AND "posts"."id" = ? LIMIT 1[0m  [["id", 22]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."post_id" = ?  [["post_id", 22]]
+  Rendered comments/_comment.html.erb (5.6ms)
+  Rendered posts/show.html.erb within layouts/application (77.8ms)
+Completed 500 Internal Server Error in 82ms
+
+ActionView::Template::Error (can not load translations from /Users/caiooliveira/developer/producer/config/locales/en.yml: #<Psych::SyntaxError: (/Users/caiooliveira/developer/producer/config/locales/en.yml): found character that cannot start any token while scanning for the next token at line 23 column 1>):
+    4:     <div class="avatar"><%= gravatar_image_tag comment.email %></div>
+    5:     <div class="meta">
+    6:       <span class="name"><%= comment_author_name(comment.author, comment.url) %></span><br/>
+    7:       <span class="date"><%= time_ago_in_words comment.created_at %></span>
+    8:     </div>
+    9:   </div>
+   10: 
+  app/views/comments/_comment.html.erb:7:in `block in _app_views_comments__comment_html_erb__257262715555059387_70197021557180'
+  app/views/comments/_comment.html.erb:1:in `_app_views_comments__comment_html_erb__257262715555059387_70197021557180'
+  app/views/posts/show.html.erb:16:in `_app_views_posts_show_html_erb___832298478803986354_70197027498840'
+  app/controllers/posts_controller.rb:15:in `show'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.5ms)
+
+
+Started GET "/posts/22-primeiro" for 127.0.0.1 at 2014-10-28 08:48:00 -0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"22-primeiro"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE (draft = 'f' AND published_at < '2014-10-28 10:48:01.046478') AND "posts"."id" = ? LIMIT 1[0m  [["id", 22]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."post_id" = ?  [["post_id", 22]]
+  Rendered comments/_comment.html.erb (5.0ms)
+  Rendered posts/show.html.erb within layouts/application (19.3ms)
+Completed 500 Internal Server Error in 36ms
+
+ActionView::Template::Error (can not load translations from /Users/caiooliveira/developer/producer/config/locales/en.yml: #<Psych::SyntaxError: (/Users/caiooliveira/developer/producer/config/locales/en.yml): found character that cannot start any token while scanning for the next token at line 23 column 1>):
+    4:     <div class="avatar"><%= gravatar_image_tag comment.email %></div>
+    5:     <div class="meta">
+    6:       <span class="name"><%= comment_author_name(comment.author, comment.url) %></span><br/>
+    7:       <span class="date"><%= time_ago_in_words comment.created_at %></span>
+    8:     </div>
+    9:   </div>
+   10: 
+  app/views/comments/_comment.html.erb:7:in `block in _app_views_comments__comment_html_erb__257262715555059387_70197021557180'
+  app/views/comments/_comment.html.erb:1:in `_app_views_comments__comment_html_erb__257262715555059387_70197021557180'
+  app/views/posts/show.html.erb:16:in `_app_views_posts_show_html_erb___832298478803986354_70197027498840'
+  app/controllers/posts_controller.rb:15:in `show'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.1ms)
+
+
+Started GET "/posts/22-primeiro" for 127.0.0.1 at 2014-10-28 08:48:04 -0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"22-primeiro"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE (draft = 'f' AND published_at < '2014-10-28 10:48:04.988218') AND "posts"."id" = ? LIMIT 1[0m  [["id", 22]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."post_id" = ?  [["post_id", 22]]
+  Rendered comments/_comment.html.erb (4.9ms)
+  Rendered posts/show.html.erb within layouts/application (11.8ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (can not load translations from /Users/caiooliveira/developer/producer/config/locales/en.yml: #<Psych::SyntaxError: (/Users/caiooliveira/developer/producer/config/locales/en.yml): found character that cannot start any token while scanning for the next token at line 23 column 1>):
+    4:     <div class="avatar"><%= gravatar_image_tag comment.email %></div>
+    5:     <div class="meta">
+    6:       <span class="name"><%= comment_author_name(comment.author, comment.url) %></span><br/>
+    7:       <span class="date"><%= time_ago_in_words comment.created_at %></span>
+    8:     </div>
+    9:   </div>
+   10: 
+  app/views/comments/_comment.html.erb:7:in `block in _app_views_comments__comment_html_erb__257262715555059387_70197021557180'
+  app/views/comments/_comment.html.erb:1:in `_app_views_comments__comment_html_erb__257262715555059387_70197021557180'
+  app/views/posts/show.html.erb:16:in `_app_views_posts_show_html_erb___832298478803986354_70197027498840'
+  app/controllers/posts_controller.rb:15:in `show'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.8ms)

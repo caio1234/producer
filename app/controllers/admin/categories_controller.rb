@@ -2,6 +2,8 @@ class Admin::CategoriesController < Admin::AdminController
 
   # GET /categories
   # GET /categories.xml
+  # 
+  menu_item :posts
   def index
     @categories = Category.all
 
