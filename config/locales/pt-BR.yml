@@ -1,6 +1,6 @@
 ptBR:
   
-  empty: "Não temos nenhum %{model} ainda."
+  empty: "Não temos nenhum %{collection} ainda."
   confirm: Tem certeza?
   edit: Editar
   destroy: Apagar
@@ -17,8 +17,8 @@ ptBR:
       form:
         categories: Publicar com estas categorias
         slug: Defina uma url
-        author: "Post por:"
-		media: "Mídia"  
+        author: "Post por:"  
+        media: "Mídia"
   
   number:
     format:

@@ -7,7 +7,10 @@ class PostsController < ApplicationController
     @posts = @category.posts if @category.present?
     @posts = @posts.published
 
-    respond_with @posts
+    respond_with @posts do |format|
+      format.atom
+    end
+
   end
 
   def show

@@ -2,3 +2,5 @@
 <%= menu do |m| %> <%= m.dashboard 'Dashboard', "#" %> <%= m.posts 'Posts', admin_posts_path %> <%= m.assets 'Assets', admin_assets_path %> <%= m.changelog 'Changelog', "#" %> <%= m.faqs 'FAQ', "#" %> <%= m.inquiries 'Inquiries', "#" %> <% end %>
 <%= flash_messages %> <%= yield %>
 <%= yield :bottom %>
+
+

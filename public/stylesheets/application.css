@@ -1,7 +1,14 @@
+/*
+ *= require_tree .
+ *= require_self
+*/
+
 @import "reset.css";
 @import "common.css";
 
 /* misc */
+
+
 
 body {
   font-size: 14px;
