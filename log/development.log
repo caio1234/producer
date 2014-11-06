@@ -62293,3 +62293,1209 @@ Processing by PostsController#index as ATOM
   [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
   Rendered posts/index.atom.builder (28.7ms)
 Completed 200 OK in 32ms (Views: 29.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-06 06:20:13 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (9.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (81.9ms)
+Completed 200 OK in 237ms (Views: 214.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 06:20:14 -0200
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-11-06 06:20:14 -0200
+
+
+Started GET "/assets/logo_header.png" for 127.0.0.1 at 2014-11-06 06:20:14 -0200
+
+
+Started GET "/assets/banner.jpg" for 127.0.0.1 at 2014-11-06 06:20:14 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-11-06 06:20:14 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-11-06 06:20:14 -0200
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-11-06 06:20:16 -0200
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts"  WHERE (draft = 'f' AND published_at < '2014-11-06 08:20:16.608779')
+  [1m[36mCategory Load (15.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/_sidebar.html.erb (19.8ms)
+  Rendered posts/index.html.erb within layouts/application (129.8ms)
+Completed 200 OK in 230ms (Views: 150.7ms | ActiveRecord: 16.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 06:20:16 -0200
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-11-06 06:20:16 -0200
+
+
+Started GET "/assets/logo_header.png" for 127.0.0.1 at 2014-11-06 06:20:16 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-11-06 06:20:16 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-11-06 06:20:16 -0200
+
+
+Started GET "/assets/blog.css?body=1" for 127.0.0.1 at 2014-11-06 06:20:16 -0200
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-11-06 06:20:35 -0200
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"  WHERE (draft = 'f' AND published_at < '2014-11-06 08:20:35.341460')
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/_sidebar.html.erb (2.0ms)
+  Rendered posts/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 49ms (Views: 46.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 06:20:35 -0200
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-11-06 06:20:35 -0200
+
+
+Started GET "/assets/logo_header.png" for 127.0.0.1 at 2014-11-06 06:20:35 -0200
+
+
+Started GET "/assets/blog.css?body=1" for 127.0.0.1 at 2014-11-06 06:20:35 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-11-06 06:20:35 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-11-06 06:20:35 -0200
+
+
+Started GET "/posts.atom" for 127.0.0.1 at 2014-11-06 06:20:38 -0200
+Processing by PostsController#index as ATOM
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts"  WHERE (draft = 'f' AND published_at < '2014-11-06 08:20:38.474522')  ORDER BY "posts"."id" DESC LIMIT 1
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"  WHERE (draft = 'f' AND published_at < '2014-11-06 08:20:38.474522')[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/index.atom.builder (105.1ms)
+Completed 200 OK in 114ms (Views: 111.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-11-06 06:23:19 -0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"  WHERE (draft = 'f' AND published_at < '2014-11-06 08:23:19.121469')[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered posts/_sidebar.html.erb (3.6ms)
+  Rendered posts/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 59ms (Views: 49.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/blog.css?body=1" for 127.0.0.1 at 2014-11-06 06:23:19 -0200
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-11-06 06:23:19 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 06:23:19 -0200
+
+
+Started GET "/assets/logo_header.png" for 127.0.0.1 at 2014-11-06 06:23:19 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-11-06 06:23:19 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-11-06 06:23:19 -0200
+
+
+Started GET "/posts.atom" for 127.0.0.1 at 2014-11-06 06:23:22 -0200
+Processing by PostsController#index as ATOM
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE (draft = 'f' AND published_at < '2014-11-06 08:23:22.181856')  ORDER BY "posts"."id" DESC LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"  WHERE (draft = 'f' AND published_at < '2014-11-06 08:23:22.181856')
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/index.atom.builder (10.6ms)
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-11-06 06:25:01 -0200
+Processing by PostsController#index as HTML
+Completed 500 Internal Server Error in 15ms
+
+NameError (undefined local variable or method `author' for #<Class:0x007fcf457c71f0>):
+  app/models/post.rb:7:in `<class:Post>'
+  app/models/post.rb:1:in `<top (required)>'
+  app/controllers/posts_controller.rb:5:in `index'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.6ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-11-06 06:25:26 -0200
+Processing by PostsController#index as HTML
+Completed 500 Internal Server Error in 10ms
+
+NameError (undefined local variable or method `author' for #<Class:0x007fcf45694c88>):
+  app/models/post.rb:7:in `<class:Post>'
+  app/models/post.rb:1:in `<top (required)>'
+  app/controllers/posts_controller.rb:5:in `index'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-06 06:25:40 -0200
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 44ms (Views: 43.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 06:25:40 -0200
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-11-06 06:25:40 -0200
+
+
+Started GET "/assets/logo_header.png" for 127.0.0.1 at 2014-11-06 06:25:40 -0200
+
+
+Started GET "/assets/banner.jpg" for 127.0.0.1 at 2014-11-06 06:25:40 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-11-06 06:25:40 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-11-06 06:25:40 -0200
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-11-06 06:25:41 -0200
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts"  WHERE (draft = 'f' AND published_at < '2014-11-06 08:25:41.125581')
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/_sidebar.html.erb (3.8ms)
+  Rendered posts/index.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 59ms (Views: 49.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-11-06 06:25:41 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 06:25:41 -0200
+
+
+Started GET "/assets/logo_header.png" for 127.0.0.1 at 2014-11-06 06:25:41 -0200
+
+
+Started GET "/assets/blog.css?body=1" for 127.0.0.1 at 2014-11-06 06:25:41 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-11-06 06:25:41 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-11-06 06:25:41 -0200
+
+
+Started GET "/posts.atom" for 127.0.0.1 at 2014-11-06 06:25:42 -0200
+Processing by PostsController#index as ATOM
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts"  WHERE (draft = 'f' AND published_at < '2014-11-06 08:25:42.775084')  ORDER BY "posts"."id" DESC LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"  WHERE (draft = 'f' AND published_at < '2014-11-06 08:25:42.775084')[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/index.atom.builder (10.0ms)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.6ms)
+  [1m[36m (59.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreatePosts (20101111221552)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "excerpt" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20101111221552"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Migrating to CreateCategories (20101118012057)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20101118012057"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Migrating to CreateCategoriesPosts (20101118012110)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "categories_posts" ("post_id" integer NOT NULL, "category_id" integer NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20101118012110"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateUsers (20140915151415)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreatePosts (20101111221552)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "excerpt" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20101111221552"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateCategories (20101118012057)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20101118012057"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to CreateCategoriesPosts (20101118012110)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "categories_posts" ("post_id" integer NOT NULL, "category_id" integer NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20101118012110"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateUsers (20140915151415)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (2.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreatePosts (20101111221552)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "excerpt" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20101111221552"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateCategories (20101118012057)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20101118012057"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateCategoriesPosts (20101118012110)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "categories_posts" ("post_id" integer NOT NULL, "category_id" integer NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20101118012110"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Migrating to CreateUsers (20140915151415)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20140915151415)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreatePosts (20101111221552)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "excerpt" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20101111221552"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateCategories (20101118012057)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20101118012057"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateCategoriesPosts (20101118012110)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "categories_posts" ("post_id" integer NOT NULL, "category_id" integer NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20101118012110"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateUsers (20140915151415)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (2.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreatePosts (20101111221552)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "excerpt" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20101111221552"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateCategories (20101118012057)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20101118012057"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateCategoriesPosts (20101118012110)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "categories_posts" ("post_id" integer NOT NULL, "category_id" integer NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20101118012110"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateUsers (20140915151415)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140915151415"]]
+  [1m[36m (87.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreateComments (20140921004226)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author" varchar(255), "email" varchar(255), "url" varchar(255), "body" text, "post_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_comments_on_post_id" ON "comments" ("post_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140921004226"]]
+  [1m[35m (22.3ms)[0m  commit transaction
+Migrating to AddAuthorIdToPost (20140921122133)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "posts" ADD "author_id" integer
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140921122133"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to AddDraftAndPermalinkToPost (20140925101434)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "posts" ADD "draft" boolean
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "posts" ADD "permalink" varchar(255)[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140925101434"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+Migrating to RenamePermalinkToSlugInPost (20141010093735)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TEMPORARY TABLE "aposts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "excerpt" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime, "author_id" integer, "draft" boolean, "slug" varchar(255)) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "posts"
+  [1m[36m (14.1ms)[0m  [1mDROP TABLE "posts"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "excerpt" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime, "author_id" integer, "draft" boolean, "slug" varchar(255)) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "aposts"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "aposts"
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141010093735"]]
+  [1m[35m (2.3ms)[0m  commit transaction
+Migrating to AddPublishedAtToPost (20141010104116)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ADD "published_at" datetime
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141010104116"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateAssets (20141027170245)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "assets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141027170245"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+Migrating to AddAttachmentDocumentToAssets (20141027173458)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "assets" ADD "document_file_name" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "assets" ADD "document_content_type" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "assets" ADD "document_file_size" integer
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "assets" ADD "document_updated_at" datetime[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141027173458"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+Migrating to DeviseCreateInstalls (20141106093346)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "installs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.3ms)[0m  CREATE UNIQUE INDEX "index_installs_on_email" ON "installs" ("email")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_installs_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_installs_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_installs_on_reset_password_token" ON "installs" ("reset_password_token")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141106093346"]]
+  [1m[35m (3.3ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_installs_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_installs_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_installs_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_installs_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreatePosts (20101111221552)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "excerpt" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20101111221552"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateCategories (20101118012057)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20101118012057"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateCategoriesPosts (20101118012110)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "categories_posts" ("post_id" integer NOT NULL, "category_id" integer NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20101118012110"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateUsers (20140915151415)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreatePosts (20101111221552)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "excerpt" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20101111221552"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateCategories (20101118012057)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20101118012057"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to CreateCategoriesPosts (20101118012110)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "categories_posts" ("post_id" integer NOT NULL, "category_id" integer NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20101118012110"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to CreateUsers (20140915151415)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140915151415"]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateComments (20140921004226)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author" varchar(255), "email" varchar(255), "url" varchar(255), "body" text, "post_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_comments_on_post_id" ON "comments" ("post_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140921004226"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to AddAuthorIdToPost (20140921122133)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ADD "author_id" integer
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140921122133"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Migrating to AddDraftAndPermalinkToPost (20140925101434)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ADD "draft" boolean
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "posts" ADD "permalink" varchar(255)[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140925101434"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Migrating to RenamePermalinkToSlugInPost (20141010093735)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TEMPORARY TABLE "aposts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "excerpt" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime, "author_id" integer, "draft" boolean, "slug" varchar(255)) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "posts"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "posts"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "excerpt" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime, "author_id" integer, "draft" boolean, "slug" varchar(255)) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "aposts"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "aposts"
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141010093735"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Migrating to AddPublishedAtToPost (20141010104116)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "posts" ADD "published_at" datetime
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141010104116"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Migrating to CreateAssets (20141027170245)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "assets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141027170245"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to AddAttachmentDocumentToAssets (20141027173458)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "assets" ADD "document_file_name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "assets" ADD "document_content_type" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "assets" ADD "document_file_size" integer
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "assets" ADD "document_updated_at" datetime[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141027173458"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Migrating to DeviseCreateInstalls (20141106093346)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "installs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.3ms)[0m  CREATE UNIQUE INDEX "index_installs_on_email" ON "installs" ("email")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_installs_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_installs_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE UNIQUE INDEX "index_installs_on_reset_password_token" ON "installs" ("reset_password_token")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141106093346"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_installs_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_installs_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_installs_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_installs_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreatePosts (20101111221552)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "excerpt" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20101111221552"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to CreateCategories (20101118012057)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20101118012057"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateCategoriesPosts (20101118012110)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "categories_posts" ("post_id" integer NOT NULL, "category_id" integer NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20101118012110"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateUsers (20140915151415)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "full_name" varchar(255), "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140915151415"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Migrating to CreateComments (20140921004226)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author" varchar(255), "email" varchar(255), "url" varchar(255), "body" text, "post_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_comments_on_post_id" ON "comments" ("post_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140921004226"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Migrating to AddAuthorIdToPost (20140921122133)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ADD "author_id" integer
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140921122133"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to AddDraftAndPermalinkToPost (20140925101434)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ADD "draft" boolean
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "posts" ADD "permalink" varchar(255)[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140925101434"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Migrating to RenamePermalinkToSlugInPost (20141010093735)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TEMPORARY TABLE "aposts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "excerpt" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime, "author_id" integer, "draft" boolean, "slug" varchar(255)) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "posts"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "posts"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "excerpt" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime, "author_id" integer, "draft" boolean, "slug" varchar(255)) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "aposts"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "aposts"
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141010093735"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+Migrating to AddPublishedAtToPost (20141010104116)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ADD "published_at" datetime
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141010104116"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+Migrating to CreateAssets (20141027170245)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "assets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141027170245"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to AddAttachmentDocumentToAssets (20141027173458)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "assets" ADD "document_file_name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "assets" ADD "document_content_type" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "assets" ADD "document_file_size" integer
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "assets" ADD "document_updated_at" datetime[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141027173458"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Migrating to DeviseCreateInstalls (20141106093346)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "installs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.3ms)[0m  CREATE UNIQUE INDEX "index_installs_on_email" ON "installs" ("email")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_installs_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_installs_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE UNIQUE INDEX "index_installs_on_reset_password_token" ON "installs" ("reset_password_token")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141106093346"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_installs_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_installs_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_installs_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_installs_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/admin/posts" for 127.0.0.1 at 2014-11-06 08:23:36 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::PostsController#index as HTML
+Completed 401 Unauthorized in 16ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-11-06 08:23:37 -0200
+Processing by Admin::SessionsController#new as HTML
+  Rendered admin/sessions/new.html.erb within layouts/admin (36.1ms)
+Completed 200 OK in 108ms (Views: 97.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-11-06 08:23:37 -0200
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-11-06 08:23:37 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-11-06 08:23:37 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-11-06 08:23:37 -0200
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-06 08:23:38 -0200
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 83ms (Views: 82.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 08:23:38 -0200
+
+
+Started GET "/assets/banner.jpg" for 127.0.0.1 at 2014-11-06 08:23:38 -0200
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-11-06 08:23:38 -0200
+
+
+Started GET "/assets/logo_header.png" for 127.0.0.1 at 2014-11-06 08:23:38 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-11-06 08:23:38 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-11-06 08:23:39 -0200
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-11-06 08:23:41 -0200
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"  WHERE (draft = 'f' AND published_at < '2014-11-06 10:23:41.114882')
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/_sidebar.html.erb (1.8ms)
+  Rendered posts/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 67ms (Views: 51.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 08:23:41 -0200
+
+
+Started GET "/assets/blog.css?body=1" for 127.0.0.1 at 2014-11-06 08:23:41 -0200
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-11-06 08:23:41 -0200
+
+
+Started GET "/assets/logo_header.png" for 127.0.0.1 at 2014-11-06 08:23:41 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-11-06 08:23:41 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-11-06 08:23:41 -0200
+
+
+Started GET "/admin/posts" for 127.0.0.1 at 2014-11-06 08:23:48 -0200
+Processing by Admin::PostsController#index as HTML
+Completed 401 Unauthorized in 2ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-11-06 08:23:48 -0200
+Processing by Admin::SessionsController#new as HTML
+  Rendered admin/sessions/new.html.erb within layouts/admin (1.5ms)
+Completed 200 OK in 43ms (Views: 42.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-11-06 08:23:48 -0200
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-11-06 08:23:48 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-11-06 08:23:48 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-11-06 08:23:48 -0200
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-11-06 08:25:21 -0200
+Processing by Admin::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8vAR91dPvt5zJANFJVd1pw2ytGW+gpp2N6BuXcGYIoQ=", "user"=>{"email"=>"kaoscaio@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'kaoscaio@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+Completed 401 Unauthorized in 28ms
+Processing by Admin::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8vAR91dPvt5zJANFJVd1pw2ytGW+gpp2N6BuXcGYIoQ=", "user"=>{"email"=>"kaoscaio@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign in"}
+  Rendered admin/sessions/new.html.erb within layouts/admin (1.7ms)
+Completed 200 OK in 120ms (Views: 38.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-11-06 08:25:21 -0200
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-11-06 08:25:21 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-11-06 08:25:21 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-11-06 08:25:21 -0200
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-11-06 08:25:30 -0200
+Processing by Admin::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8vAR91dPvt5zJANFJVd1pw2ytGW+gpp2N6BuXcGYIoQ=", "user"=>{"email"=>"kaoscaio@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+Completed 401 Unauthorized in 1ms
+Processing by Admin::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8vAR91dPvt5zJANFJVd1pw2ytGW+gpp2N6BuXcGYIoQ=", "user"=>{"email"=>"kaoscaio@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered admin/sessions/new.html.erb within layouts/admin (2.2ms)
+Completed 200 OK in 42ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-11-06 08:25:30 -0200
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-11-06 08:25:30 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-11-06 08:25:30 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-11-06 08:25:30 -0200
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-11-06 08:25:38 -0200
+Processing by Admin::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8vAR91dPvt5zJANFJVd1pw2ytGW+gpp2N6BuXcGYIoQ=", "user"=>{"email"=>"kaoscaio@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'kaoscaio@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 401 Unauthorized in 3ms
+Processing by Admin::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8vAR91dPvt5zJANFJVd1pw2ytGW+gpp2N6BuXcGYIoQ=", "user"=>{"email"=>"kaoscaio@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered admin/sessions/new.html.erb within layouts/admin (1.4ms)
+Completed 200 OK in 120ms (Views: 40.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-11-06 08:25:38 -0200
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-11-06 08:25:38 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-11-06 08:25:38 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-11-06 08:25:38 -0200
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'kaoscaio@gmail.com' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'kaoscaio@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'kaoscaio@gmail.com' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'kaoscaio@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "full_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-11-06 10:30:18.825391"], ["email", "kaoscaio@gmail.com"], ["encrypted_password", "$2a$10$NaggMWFGcro4cx7T82p3u.57xXNRTMFfs9MhFSHLXw6gl4u/9WNY."], ["full_name", "Caio Fernando Oliveira Silva"], ["updated_at", "2014-11-06 10:30:18.825391"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-11-06 08:32:02 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::SessionsController#new as HTML
+  Rendered admin/sessions/new.html.erb within layouts/admin (22.0ms)
+Completed 200 OK in 90ms (Views: 68.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-11-06 08:32:02 -0200
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-11-06 08:32:02 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-11-06 08:32:02 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-11-06 08:32:02 -0200
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-06 08:32:05 -0200
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 81ms (Views: 80.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-11-06 08:32:05 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 08:32:05 -0200
+
+
+Started GET "/assets/logo_header.png" for 127.0.0.1 at 2014-11-06 08:32:05 -0200
+
+
+Started GET "/assets/banner.jpg" for 127.0.0.1 at 2014-11-06 08:32:05 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-11-06 08:32:05 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-11-06 08:32:05 -0200
+
+
+Started GET "/posts" for 127.0.0.1 at 2014-11-06 08:32:06 -0200
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"  WHERE (draft = 'f' AND published_at < '2014-11-06 10:32:06.823566')
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered posts/_sidebar.html.erb (1.8ms)
+  Rendered posts/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 68ms (Views: 52.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 08:32:06 -0200
+
+
+Started GET "/assets/logo_header.png" for 127.0.0.1 at 2014-11-06 08:32:06 -0200
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-11-06 08:32:06 -0200
+
+
+Started GET "/assets/blog.css?body=1" for 127.0.0.1 at 2014-11-06 08:32:06 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-11-06 08:32:06 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-11-06 08:32:06 -0200
+
+
+Started GET "/admin/posts" for 127.0.0.1 at 2014-11-06 08:32:11 -0200
+Processing by Admin::PostsController#index as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-11-06 08:32:12 -0200
+Processing by Admin::SessionsController#new as HTML
+  Rendered admin/sessions/new.html.erb within layouts/admin (1.8ms)
+Completed 200 OK in 50ms (Views: 49.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-11-06 08:32:12 -0200
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-11-06 08:32:12 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-11-06 08:32:12 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-11-06 08:32:12 -0200
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-11-06 08:32:22 -0200
+Processing by Admin::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8vAR91dPvt5zJANFJVd1pw2ytGW+gpp2N6BuXcGYIoQ=", "user"=>{"email"=>"kaoscaio@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'kaoscaio@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["remember_created_at", "2014-11-06 10:32:22.882535"], ["updated_at", "2014-11-06 10:32:22.883029"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Binary data inserted for `string` type on column `current_sign_in_ip`
+Binary data inserted for `string` type on column `last_sign_in_ip`
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-11-06 10:32:22.894476"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2014-11-06 10:32:22.894476"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2014-11-06 10:32:22.895704"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/admin/posts
+Completed 302 Found in 163ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/admin/posts" for 127.0.0.1 at 2014-11-06 08:32:22 -0200
+Processing by Admin::PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered admin/posts/index.html.erb within layouts/admin (3.1ms)
+Completed 200 OK in 57ms (Views: 54.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-11-06 08:32:22 -0200
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-11-06 08:32:23 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-11-06 08:32:23 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-11-06 08:32:23 -0200
+
+
+Started GET "/admin/posts/new" for 127.0.0.1 at 2014-11-06 08:32:27 -0200
+Processing by Admin::PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mAsset Load (0.2ms)[0m  SELECT "assets".* FROM "assets"   ORDER BY created_at DESC
+  Rendered admin/posts/_form.html.erb (48.0ms)
+  Rendered admin/posts/new.html.erb within layouts/admin (49.3ms)
+Completed 200 OK in 127ms (Views: 105.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-11-06 08:32:27 -0200
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-11-06 08:32:27 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-11-06 08:32:27 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-11-06 08:32:27 -0200
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2014-11-06 08:34:55 -0200
+
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.2ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (18.8ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (58.9ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2014-11-06 08:35:04 -0200
+
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.6ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (36.8ms)
+
+
+Started GET "/admin/posts" for 127.0.0.1 at 2014-11-06 08:35:06 -0200
+Processing by Admin::PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered admin/posts/index.html.erb within layouts/admin (0.9ms)
+Completed 200 OK in 44ms (Views: 42.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-11-06 08:35:07 -0200
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-11-06 08:35:07 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-11-06 08:35:07 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-11-06 08:35:07 -0200
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2014-11-06 08:35:15 -0200
+
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/caiooliveira/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.8ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/caiooliveira/.rvm/gems/ruby-2.1.3@rails4.1.6/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (34.6ms)
+
+
+Started GET "/admin/posts" for 127.0.0.1 at 2014-11-06 08:35:20 -0200
+Processing by Admin::PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered admin/posts/index.html.erb within layouts/admin (0.9ms)
+Completed 200 OK in 48ms (Views: 45.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/admin.css?body=1" for 127.0.0.1 at 2014-11-06 08:35:20 -0200
+
+
+Started GET "/assets/scaffold.css?body=1" for 127.0.0.1 at 2014-11-06 08:35:20 -0200
+
+
+Started GET "/assets/reset.css" for 127.0.0.1 at 2014-11-06 08:35:20 -0200
+
+
+Started GET "/assets/common.css" for 127.0.0.1 at 2014-11-06 08:35:20 -0200

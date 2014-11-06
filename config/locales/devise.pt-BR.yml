@@ -1,0 +1,39 @@
+ptBR:
+  errors:
+    messages:
+      not_found: "não encontrado"
+      already_confirmed: "já está ativo"
+      not_locked: "não está bloqueado"
+
+  devise:
+    failure:
+      unauthenticated: 'Você precisa estar registrado para continuar.'
+      unconfirmed: 'Você precisa confirmar sua conta.'
+      locked: 'Sua conta está bloqueada.'
+      invalid: 'Senha ou email inválidos.'
+      invalid_token: 'Código inválido.'
+      timeout: 'Sua sessão expirou, entre com seu usuário novamente.'
+      inactive: 'Sua conta ainda não foi ativada.'
+    sessions:
+      signed_in: 'Entrou com sucesso.'
+      signed_out: 'Saiu com sucesso.'
+    passwords:
+      send_instructions: 'Você vai receber um email sobre como redefinir sua senha.'
+      updated: 'Sua senha foi alterada com sucesso.'
+    confirmations:
+      send_instructions: 'Sua conta precisa ser ativada. Você vai receber um email com as instruções.'
+      confirmed: 'Sua conta foi ativada com sucesso.'
+    registrations:
+      signed_up: 'Você se registrou com sucesso. Um email foi enviado para você ativar sua conta.'
+      updated: 'Você atualizou sua conta com sucesso.'
+      destroyed: 'Sua conta foi excluída com sucesso.'
+    unlocks:
+      send_instructions: 'Você receberá um email com instruções sobre como desbloquear sua conta.'
+      unlocked: 'Sua conta foi desbloqueada com sucesso.'
+    mailer:
+      confirmation_instructions:
+        subject: 'Ative sua conta'
+      reset_password_instructions:
+        subject: 'Redefinir sua senha'
+      unlock_instructions:
+        subject: 'Desbloqueie sua conta'

@@ -41,4 +41,5 @@ gem 'spring',        group: :development
 gem 'paperclip', '4.2.0'
 gem 'menu_builder'
 gem 'RedCloth'
+gem 'devise'
 

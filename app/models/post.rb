@@ -4,6 +4,8 @@ class Post < ActiveRecord::Base
   
   belongs_to :author, :class_name => "User", :foreign_key => "author_id"
   
+  delegate :full_name, :to => :author, :prefix => true
+  
   validates_presence_of :title, :body, :slug#, :author
   #validates_associated :author
   validates_uniqueness_of :slug
@@ -22,6 +24,12 @@ class Post < ActiveRecord::Base
   def to_param
     "#{id}-#{slug}"
   end
+  
+  
+  
+  #def author_full_name
+  #  self.author.full_name
+  #end
   
   protected
   def generate_slug

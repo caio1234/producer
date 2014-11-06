@@ -10,7 +10,7 @@ atom_feed do |feed|
       entry.updated  post.updated_at
 
       entry.author do |author|
-        author.name post.author.full_name
+        author.name post.author_full_name
       end
     end
   end

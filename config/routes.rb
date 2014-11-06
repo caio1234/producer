@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
   
-  
-
+  devise_for :users, :controllers => {
+    :sessions => "admin/sessions",
+    :passwords => "admin/passwords",
+  }
+  #devise_for :installs
   namespace :admin do
     resources :categories, :except => [:show]
     resources :posts
     resources :assets
+    resources :users, :except => [:show]
   end
 
 
