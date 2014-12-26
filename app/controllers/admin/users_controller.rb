@@ -17,14 +17,16 @@ class Admin::UsersController < Admin::AdminController
   end
 
   def create
-    @user = User.new(params[:user])
+    params[:user]
+   # @user = User.new(params[:user])
+    @user = User.new(params.require(:user).permit!)
     flash[:notice] = 'User was successfully created.' if @user.save
     respond_with @user, :location => [:admin, :users]
   end
 
   def update
     @user = User.find(params[:id])
-    flash[:notice] = 'User was successfully updated.' if @user.update_attributes(params[:user])
+    flash[:notice] = 'User was successfully updated.' if @user.update_attributes(params.require(:user).permit!)
     respond_with @user, :location => [:admin, :users]
   end
 

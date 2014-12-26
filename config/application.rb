@@ -19,5 +19,6 @@ module Producer
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     #config.i18n.load_path += Dir[Rails.root.join('locales', '**', '*.{rb,yml}').to_s]
     config.i18n.default_locale = "ptBR"
+    #config.assets.precompile += %w(active_admin.js active_admin.css active_admin/print.css)
   end
 end

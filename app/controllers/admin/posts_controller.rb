@@ -33,7 +33,7 @@ class Admin::PostsController < Admin::AdminController
   def create
     @post = Post.new(params.require(:post).permit!)
     
-    @post = Post.new(params[:post])
+    #@post = Post.new(params[:post])
     flash[:notice] = 'Post was successfully created.' if @post.save
     respond_with @post, :location => admin_posts_path
     

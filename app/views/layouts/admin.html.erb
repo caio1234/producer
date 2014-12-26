@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag "admin", "scaffold" %> <%= javascript_include_tag "vendor/jquery", "rails" %> <%= csrf_meta_tag %>
+<%= stylesheet_link_tag "admin", "scaffold" %> <%= javascript_include_tag "assets/javascripts/vendor/jquery", "rails" %> <%= csrf_meta_tag %>
 <% if user_signed_in? %>
 <%= menu do |m| %> <%= m.dashboard 'Dashboard', "#" %> <%= m.posts 'Posts', admin_posts_path %> <%= m.assets 'Assets', admin_assets_path %> <%= m.changelog 'Changelog', "#" %> <%= m.faqs 'FAQ', "#" %> <%= m.inquiries 'Inquiries', "#" %> <%= m.users 'Users', admin_users_path %> <% end %>
 <%= link_to "Logout", destroy_user_session_path %>
